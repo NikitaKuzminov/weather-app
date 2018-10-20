@@ -12,6 +12,10 @@ const LIContainer = styled.li`
 const Icon = styled.i`
   float: right;
   cursor: pointer;
+
+  :hover {
+    color: orange;
+  }
 `;
 
 const CityItem = ({ city, favoriteCitiesList, toggleFavorite }) => {

@@ -19,15 +19,11 @@ const InputField = styled.input.attrs({
   }
 `;
 
-const SearchInputField = ({
-  inputValue,
-  updateSearchFieldInput,
-  requestCitiesList
-}) => {
-  const handleChange = value => {
-    updateSearchFieldInput(value);
-    requestCitiesList();
-  };
+const SearchInputField = ({ inputValue, handleChange }) => {
+  // const handleChange = value => {
+  //   updateSearchFieldInput(value);
+  //   requestCitiesList();
+  // };
 
   return (
     <InputField

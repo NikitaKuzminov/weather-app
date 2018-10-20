@@ -1,12 +1,18 @@
 import React from "react";
-import SearchCities from "./containers/SearchCities";
-import CitiesList from "./containers/CitiesList";
+import { Switch, Route } from "react-router-dom";
+
+import SearchCities from "./screens/SearchCities";
+import Navbar from "./components/Navbar";
+import FavoriteCititesList from "./screens/FavoriteCitiesList";
 
 const App = () => (
   <>
-    <h2>Hello World</h2>
-    <SearchCities />
-    <CitiesList />
+    <Navbar />
+    <h2>The Weather App</h2>
+    <Switch>
+      <Route exact path="/" component={SearchCities} />
+      <Route path="/weather" component={FavoriteCititesList} />
+    </Switch>
   </>
 );
 
