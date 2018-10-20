@@ -1,9 +1,9 @@
 import { call, put, takeEvery, select } from "redux-saga/effects";
 
-import { getSearchInput } from "./selectors";
+import { getSearchInput } from "../selectors";
 
-import { REQUEST_CITIES_LIST, recieveCitiesList } from "./actions";
-import { getCitiesOnSearch } from "./managers";
+import { REQUEST_CITIES_LIST, recieveCitiesList } from "../actions";
+import { getCitiesOnSearch } from "../managers";
 
 export function* fetchCitiesList() {
   try {

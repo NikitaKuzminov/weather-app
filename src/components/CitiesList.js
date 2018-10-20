@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CityItem from "./CityItem";
 
 const ULContainer = styled.ul`
   font-size: 20px;
@@ -8,21 +9,19 @@ const ULContainer = styled.ul`
   margin: 0;
 `;
 
-const LIContainer = styled.li`
-  width: 300px;
-  height: 30px;
-  border-bottom: 1px solid lightblue;
-  margin-bottom: 15px;
-`;
-
-const CitiesList = ({ citiesList }) => (
-  <>
+const CitiesList = ({ citiesList, favoriteCitiesList, toggleFavorite }) => {
+  return (
     <ULContainer>
       {citiesList.map(city => (
-        <LIContainer>{city.title}</LIContainer>
+        <CityItem
+          city={city}
+          favoriteCitiesList={favoriteCitiesList}
+          toggleFavorite={toggleFavorite}
+          key={city.id}
+        />
       ))}
     </ULContainer>
-  </>
-);
+  );
+};
 
 export default CitiesList;

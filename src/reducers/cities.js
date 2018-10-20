@@ -31,4 +31,18 @@ const isFetching = handleActions(
   false
 );
 
-export default combineReducers({ searchFieldInput, citiesList, isFetching });
+const favorite = handleAction(
+  toggleFavorite,
+  (state, { payload }) =>
+    state.some(city => city.id === payload.id)
+      ? state.filter(city => city.id !== payload.id)
+      : [...state, payload],
+  []
+);
+
+export default combineReducers({
+  searchFieldInput,
+  citiesList,
+  isFetching,
+  favorite
+});
