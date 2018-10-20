@@ -23,9 +23,9 @@ const CityItem = ({ city, favoriteCitiesList, toggleFavorite }) => {
     ? "fa fa-times delete-icon"
     : "fa fa-star fav-icon";
   return (
-    <LIContainer onClick={() => toggleFavorite(city)}>
+    <LIContainer>
       {city.title}
-      <Icon className={iconClass} />
+      <Icon className={iconClass} onClick={() => toggleFavorite(city)} />
     </LIContainer>
   );
 };
