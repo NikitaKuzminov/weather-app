@@ -4,7 +4,7 @@ import {
   getFilteredFavoriteCitiesList,
   getFavoriteCitiesList
 } from "../selectors/";
-import { toggleFavorite } from "../actions";
+import { toggleFavorite, requestWeather } from "../actions";
 
 import CitiesList from "../components/CitiesList";
 
@@ -14,7 +14,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  toggleFavorite
+  toggleFavorite,
+  requestWeather
 };
 
 export default connect(

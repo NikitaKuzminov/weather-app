@@ -9,18 +9,26 @@ const ULContainer = styled.ul`
   margin: 0;
 `;
 
-const CitiesList = ({ citiesList, favoriteCitiesList, toggleFavorite }) => {
+const CitiesList = ({
+  citiesList,
+  favoriteCitiesList,
+  toggleFavorite,
+  requestWeather
+}) => {
   return (
-    <ULContainer>
-      {citiesList.map(city => (
-        <CityItem
-          city={city}
-          favoriteCitiesList={favoriteCitiesList}
-          toggleFavorite={toggleFavorite}
-          key={city.id}
-        />
-      ))}
-    </ULContainer>
+    <>
+      <ULContainer>
+        {citiesList.map(city => (
+          <CityItem
+            city={city}
+            favoriteCitiesList={favoriteCitiesList}
+            toggleFavorite={toggleFavorite}
+            key={city.id}
+          />
+        ))}
+      </ULContainer>
+      <button onClick={() => requestWeather(28218)}>lol</button>
+    </>
   );
 };
 

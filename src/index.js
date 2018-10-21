@@ -9,6 +9,10 @@ import "./index.css";
 
 import { store } from "./configureStore";
 
+import { requestWeather } from "./actions";
+
+store.dispatch(requestWeather(1398823));
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
